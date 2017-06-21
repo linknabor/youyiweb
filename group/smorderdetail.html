@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"  />
+    <meta content="telephone=no" name="format-detection" />
+    <meta charset="UTF-8">
+    <title>优惠组合</title>
+    <link rel="stylesheet" href="../static/css/header.css?v=20151217">
+    <link rel="stylesheet" href="../static/css/common.css?v=20151217">
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script src="../static/js/zepto.min.js?v=20151217"></script>
+	<script src="../static/js/fastclick.min-1.0.6.js?v=20151217"></script>
+	<script src="../static/js/avalon.js"></script>
+	<script src="../static/js/common_v3.js?v=20151217"></script>
+	<script src="smorderdetail.js?v=201512173"></script>
+ <style>
+ 
+ 	[ms-controller]{display:none} 
+ body{
+ 	background: #F7F7F1;
+ }
+ .notice_line{
+ 	background: #f7f7f1;
+ 	height:35px;
+ 	line-height: 35px;
+ 	text-align: left;
+ 	font-size: 14px;
+ 	color:black;
+ }
+.line {
+  padding: 15px 15px;
+  background: #f7f7f1;
+  border-bottom: 1px solid #c2c2c2;
+  margin-left: 10px;
+}
+.custom-menu-link {
+  padding-top: 15px;
+  padding-left: 15px;
+  color: #3b3937;
+  background-position-y: 15px;
+}
+	
+	.product_detail{
+		height:90px;
+	}
+	.product_picture{
+		margin:15px 15px 0 15px;
+		width:70px;
+		height:70px;
+		float:left;
+		border:1px solid #e7e7e1;
+	}
+	.product_pri_area{
+		width: 100%;
+		height:30px;
+	}
+	.product_content{
+		margin-right: 10px;
+		margin-left: 110px;
+		padding-top: 15px;
+	}
+	.product_name{
+		font-size:12px;
+		color:#3b3937;
+		line-height: 16px;
+		height:32px;
+		overflow:hidden
+	}
+	
+	.coll_detail{
+		height:95px;
+		background-color:white;
+	}
+	.coll_picture{
+		margin:10px;
+		width:70px;
+		height:70px;
+		float:left;
+		border:1px solid #e7e7e1;
+	}
+	.coll_content{
+		margin-right: 10px;
+		margin-left: 120px;
+		padding-top: 10px;
+	}
+	.coll_name{
+		font-size:12px;
+		color:#3b3937;
+		line-height: 16px;
+		height:32px;
+		overflow-y: hidden;
+	}
+	.coll_pri_area{
+		border-bottom: 2px solid #f7f7f1;
+		width: 100%;
+		height:40px;
+	}
+	.minus-btn-size{
+		width:18px;
+		height:18px;
+		background-size:18px;
+	}
+	.baoyou_desc{
+		padding:2px 15px;
+		border: 1px solid #ff8a00;
+		border-radius: 2px;
+		margin-left: 10px;
+		color:#ff8a00;
+	}
+	.right_menu{
+	    padding-left: 15px;
+	    padding-right: 15px;
+	    display: block;
+	    background: url("static/images/group/icon_arrow.png") no-repeat;
+	    background-size: 7px 12px;
+	    background-position: right center;
+	}
+	.discount_title{
+		background-color:#ff8a00;
+		color:white;
+		text-align:center;
+		width:100%;
+		height:30px;
+		line-height:30px;
+		font-size:16px;
+		position:fixed;
+		z-index:1000;
+		top:-30px;
+		display:block;
+	}
+	.receiver_area{
+		width: 100%;
+		background-color:	#f7f7f1;
+	}
+	.revceiver_info{
+		color: black;
+		font-size: 15px;
+		font-weight: bold;
+		margin-left: 10px;
+		padding-bottom: 5px;
+	}
+	.seperate_line{
+		
+	    border-bottom: 1px solid #c2c2c2;
+	}
+	.addr_area{
+		margin: 10px 5% 10px 5%;
+		font-size: 14px;
+	}
+	.addr_detail{
+		margin: 10px 0;
+	}
+	.sent{
+		height: 40px;
+		margin: 5px 0%;
+		text-align: center;
+		font-size: 15px;
+		color: red;
+	}
+</style>
+</head>
+
+<body ms-controller="root">
+	<div class="notice_line" id="notice_line">&nbsp;&nbsp;&nbsp;&nbsp;订单编号&nbsp;&nbsp;{{order.orderNo}}</div>
+<!-- 	<div class="product_detail" >
+		<img class="product_picture" ms-src="{{mainItem.productPic}}" />
+		<div class="product_content">
+			<div class="product_name">{{mainItem.ruleName}}</div>
+			<div class="product_pri_area">
+				<div class="fl fs14 highlight" style="margin-left: 10px;padding-top: 20px"> ¥{{mainItem.price}} </div>
+				<div class="fl fs14" style="margin-left: 10px;padding-top: 20px;color:#888888"> <del>¥{{mainItem.oriPrice}}</del> </div>
+				<div class="fr"  style="margin-top:8px;" >
+					<span class="sbtn btn-minus minus-btn-size" ms-class-active="mainItem.count>1" ms-click="minusMainCount"></span>
+					<span class="number fs16">{{mainItem.count}}</span>
+					<span class="sbtn btn-add active minus-btn-size" ms-click="addMainCount"></span>
+				</div>
+			</div>
+		</div>
+	</div> -->
+	<div class="coll_detail" style="margin-top: 5px;" ms-repeat-item="orderItems">
+		<i class="fl" style="margin-top:40px;margin-left: 15px;" ></i>
+		<img class="coll_picture" ms-src="{{item.productPic}}" />
+		<div class="coll_content">
+			<div class="coll_name" ms-click="gotoDetail($index)">{{item.productName}}</div>
+			<div class="coll_pri_area">
+				<div class="fl fs14 highlight" style="margin-left: 10px;padding-top: 12px"> ¥{{item.price}} </div>
+			<!-- 	<div class="fl fs14" style="margin-left: 10px;padding-top: 12px;color:#888888"> <del>¥{{item.oriPrice}}</del> </div> -->
+				<div class="fr" style="margin-top:8px;">
+					<span class="number fs16">x {{item.count}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="line p15 fs15" style="height:30px">
+		<span class="fr">
+			<span class="fs12">共{{totalCount}}个商品</span>
+			<span class="total fs15">合计</span>
+			<span class="fs20" style="margin-right: 5px;">¥&nbsp;{{order.totalAmount.toFixed(2)}}</span>
+		</span>
+	</div>
+<!--	当满减底价为0或者为0.0时不显示活动信息-->
+	<div class="line p15 fs15" style="height:20px;text-align:center" ms-visible="collocation.satisfyAmount>0">
+		<span class="fl">活动优惠</span> 
+		<!-- <span class="baoyou_desc" >满{{collocation.satisfyAmount}}减{{collocation.discountAmount}}</span> -->
+		<span class="fr highlight">&nbsp; -¥{{order.discountAmount.toFixed(2)}}  </span>
+	</div>
+	<div class="line p15 fs15" style="height:20px;text-align:center" ms-visible="collocation.satisfyAmount>0">
+		<span class="fl">优惠后金额</span> 
+		<span class="fr highlight">&nbsp; ¥{{needPayPrice.toFixed(2)}}  </span>
+	</div>
+	<div class="line p15 fs15" style="height:20px;text-align:center" ms-visible="collocation.satisfyAmount>0">
+		<span class="fl">配送费</span> 
+		<span class="fr highlight">&nbsp; ¥{{order.shipFee.toFixed(2)}}  </span>
+	</div>
+	<div class="line p15 fs15" style="height:20px;text-align:center" ms-visible="collocation.satisfyAmount>0">
+		<span class="fl">现金券</span> 
+		<span class="fr highlight" ms-if="order.couponAmount!=null">&nbsp; ¥{{order.couponAmount.toFixed(2)}}  </span>
+		<span class="fr highlight" ms-if="order.couponAmount==null">&nbsp; ¥0.00  </span>
+	</div>
+	<div class="line p15 fs15" style="height:20px;text-align:center" ms-visible="collocation.satisfyAmount>0">
+		<span class="fl highlight">实际支付金额</span> 
+		<span class="fr highlight">&nbsp; ¥{{totalPrice.toFixed(2)}}  </span>
+	</div>
+	<div style="height: 30px;"></div>
+	<div class="receiver_area">
+		<div class="revceiver_info seperate_line">&nbsp;&nbsp;收货人信息</div>
+		<div class="addr_area">
+			<div class="addr_detail">姓名：{{order.receiverName}}</div>
+			<div class="addr_detail">电话：{{order.tel}}</div>
+			<div class="addr_detail">地址：{{order.address}}</div>
+			<div class="addr_detail">备注：{{order.memo}}</div>
+		</div>
+	</div>
+	<div style="height: 40px;position: relative;">&nbsp;</div>
+	<div class="btn-fixed" style="z-index:1003" ms-visible="order.status==9">
+		<a href="#" class="btn" ms-click="orderConfirm" >
+			确认并发货
+		</a>
+	</div>
+	<div class="sent" style="z-index:1003" ms-visible="order.status==5">
+			订单已发货
+	</div>
+	<div class="sent" style="z-index:1003" ms-visible="order.status==6">
+			订单已发货
+	</div>
+</body>
+</html>
