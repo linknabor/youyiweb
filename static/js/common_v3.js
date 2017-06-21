@@ -8,24 +8,20 @@ var MasterConfig = function() {
         //baseUrl: "http://www.e-shequ.com/wechat-sit/hexie/wechat/",
         //basePageUrl:"http://www.e-shequ.com/wechat-sit/hexie/",
 
-        baseUrl: "http://test.e-shequ.com/weifa/wechat/hexie/wechat/",
-        basePageUrl:"http://test.e-shequ.com/weifa/weixin/",
-        payPageFolder:"http://test.e-shequ.com/pay/",
-        payPageSuffix:"wf",		//weifa
+        baseUrl: "https://www.e-shequ.com/youyi/wechat/hexie/wechat/",
+        basePageUrl:"https://www.e-shequ.com/youyi/weixin/",
+        payPageFolder:"https://www.e-shequ.com/pay/",
+        payPageSuffix:"yy",		//weifa
         
-        appId: "wx95f46f41ca5e570e",
+        appId: "wx89c743b2fa762a2c",
         oauthUrl: "https://open.weixin.qq.com/connect/oauth2/authorize?",
         oauthUrlPostFix:"&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect",
-        bindAppId: "wxec3315b94f3da1a3",
+        bindAppId: "wx895d483798f8d322",
 
         baidu_map_key:"RUWUgrEEF5VjoaWsstMMZwOD",
         shop_name: "友宜物业",
 
-        is_debug:true,
-        statistics: {
-            baidu_code: "62ff8bd29967ed5ee536babb82aa8d64",
-            cnzz_script: '<script src="http://s11.cnzz.com/stat.php?id=1256090623&web_id=1256090623" language="JavaScript"></script>'
-        }
+        is_debug:true
     },
 
     e = {};
@@ -45,7 +41,7 @@ var Config = function() {
             no_goods: "更多新品正在陆续推出..."
         },
         user_info: {
-            avatar: "http://test.e-shequ.com/weifa/weixin/static/images/logo.jpg",
+            avatar: "https://www.e-shequ.com/youyi/weixin/static/images/logo.jpg",
             nickname: "游客",
             levelname: "普通会员"
         },
@@ -55,7 +51,7 @@ var Config = function() {
             2 : "大楼VIP"
         },
         coupon:{
-            seedImg:"http://test.e-shequ.com/weifa/weixin/static/img/banner/banner_market_shuiguo.jpg"
+            seedImg:"https://www.e-shequ.com/youyi/weixin/static/img/banner/banner_market_shuiguo.jpg"
         }
     },
     e = {};
