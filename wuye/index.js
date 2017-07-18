@@ -22,8 +22,8 @@ avalon.ready(function() {
             initSwiper();
         }, function() {})
     }
-    
-    var a = 0,
+
+	var a = 0,
     o = avalon.define({
         $id: "root",
        jumpToDetail:function(mid) {
@@ -37,6 +37,10 @@ avalon.ready(function() {
     		   window.location.href="message.html?messageId="+mid;
     	   }
        },
+
+	   parkPay:function(){
+	      alert("该服务暂未开通，敬请关注友宜物业公众号！");
+	   },
        banners:[],
        zixuns:[],
        city:"上海",
