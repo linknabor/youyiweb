@@ -13,7 +13,7 @@ var MasterConfig = function() {
         payPageFolder:"https://www.e-shequ.com/pay/",
         payPageSuffix:"yy",		//youyi
         
-        appId: "wx89c743b2fa762a2c",
+        appId: "wxbd214f5765f346c1",
         oauthUrl: "http://open.weixin.qq.com/connect/oauth2/authorize?",
         oauthUrlPostFix:"&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect",
 		oauthUrlPostSilent:"&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect",

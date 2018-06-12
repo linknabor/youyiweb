@@ -79,6 +79,7 @@ avalon.ready(function() {
 				o.cartotalCountNormal = n.result.bills_size;
 				o.pay_least_month = n.result.pay_least_month;
 				o.totalNotPay = n.result.total_not_pay;
+				o.reduceMode = n.result.reduce_mode;
 				if(o.tabs[2].active && o.cartotalCountNormal==0){
 					o.hint = "缴纳停车费需要先绑定房屋哦。  请在  “社区物业-->我是业主” 中进行绑定。"
 				}
