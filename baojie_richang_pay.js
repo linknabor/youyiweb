@@ -1,5 +1,20 @@
 var o; 
 var payItem = getUrlParam("item");
+
+
+//解决结算页面地址无法选择问题
+function chooseAddr(address){
+    console.log(address);
+    if(address){
+        o.address=address;
+    }
+    $('#infoname').text(o.address.receiveName) ;
+    $('#infotel').text(o.address.tel) ;
+    var str = o.address.province + o.address.city+ o.address.county+'('+o.address.xiaoquName+'）'+o.address.detailAddress;
+    $('#infoaddr').text(str) ;
+    o.page='main';
+};
+
 avalon.ready(function() {
     function initInfo(){
     	

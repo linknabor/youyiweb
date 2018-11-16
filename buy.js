@@ -10,6 +10,21 @@ function chooseCoupon(coupon) {
 	computeAmount();
 	o.control.currentPage='main';
 }
+
+//解决结算页面地址无法选择问题
+function chooseAddr(address){
+	console.log(address);
+	if(address){
+	    o.model.address=address;
+	}
+	$('#infoname').text(o.model.address.receiveName) ;
+	$('#infotel').text(o.model.address.tel) ;
+	var str = o.model.address.province + o.model.address.city+ o.model.address.county+'('+o.model.address.xiaoquName+'）'+o.model.address.detailAddress;
+	$('#infoaddr').text(str) ;
+	o.control.currentPage='main';
+};
+
+
 function computeAmount(){
 	var pa,pf,a,ta;
 	pa = o.model.rule.price*o.model.count
